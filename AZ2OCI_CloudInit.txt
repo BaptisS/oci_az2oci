@@ -17,15 +17,15 @@ cat <<EOF >> /root/.oci/config
 
 [DEFAULT]
 user=ocid1.user.oc1..aaaaaaaxxxxxxxx
-fingerprint=c5:12:34:41:ed:6f:45:78:78:90:12:34:56:78:90:e0
-key_file=/root/.oci/oci_api_key_oracsmemea.pem
-tenancy=ocid1.tenancy.oc1..aaaaaaaa3ed2rov4akmwh3gzo6an2ni6uxqbe332x2it3vp3d4xh4k5jrs6a
+fingerprint=00:12:34:56:78:90:a1:bc:de:f1:23:34:56:78:90
+key_file=/root/.oci/oci_api_key.pem
+tenancy=ocid1.tenancy.oc1..aaaaaaaaxxxxxxxxx
 region=eu-frankfurt-1
-compartment-id=ocid1.compartment.oc1..aaaaaaaa2xbjqoj4aqujnbdp3ufn5etptkmzu53crpdgv42fku3tgumdy3ga
+compartment-id=ocid1.compartment.oc1..aaaaaaaaxxxxxxxxxxxx
 
 EOF
 
-cat <<EOF >> /root/.oci/oci_api_key_oracsmemea.pem
+cat <<EOF >> /root/.oci/oci_api_key.pem
 
 -----BEGIN RSA PRIVATE KEY-----
 MIIEpQIBxxxxxxxxxx
