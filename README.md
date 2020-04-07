@@ -37,9 +37,11 @@ The following document will guide you trough the steps needed to import an Azure
 ### 1- Prepare the CloudInit script for the migration server(AZ2OCIVM).
 
  1.1-	Download the following CloudInit script : https://raw.githubusercontent.com/BaptisS/oci_az2oci/master/AZ2OCI_CloudInit.txt 
+ 
  1.2-   Locate the section '[DEFAULT]' and update the variables with your own values : 
- 1.2.1-    User OCID 
- 1.2.2-    API key fingerprint 
+ 
+    -    User OCID 
+    -    API key fingerprint 
  1.2.3-    Tenancy OCID 
  1.2.4-    Region Name 
  1.2.5-    Compartment OCID 
