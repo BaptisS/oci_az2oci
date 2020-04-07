@@ -1,0 +1,41 @@
+#!/bin/sh
+sudo -s
+yum install -y kernel-uek-devel-`uname -r` gcc
+yum install -y VirtualBox-5.2
+wget https://download.virtualbox.org/virtualbox/5.2.8/Oracle_VM_VirtualBox_Extension_Pack-5.2.8.vbox-extpack
+vboxmanage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.2.8.vbox-extpack --accept-license=56be48f923303c8cababb0bb4c478284b688ed23f16d775d729b89a2e8e5f9eb
+
+sudo yum -y install lftp
+
+curl -O -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh
+chmod +x install.sh
+./install.sh --accept-all-defaults
+
+mkdir /root/.oci/
+
+cat <<EOF >> /root/.oci/config
+
+[DEFAULT]
+user=ocid1.user.oc1..aaaaaaaxxxxxxxx
+fingerprint=c5:12:34:41:ed:6f:45:78:78:90:12:34:56:78:90:e0
+key_file=/root/.oci/oci_api_key_oracsmemea.pem
+tenancy=ocid1.tenancy.oc1..aaaaaaaa3ed2rov4akmwh3gzo6an2ni6uxqbe332x2it3vp3d4xh4k5jrs6a
+region=eu-frankfurt-1
+compartment-id=ocid1.compartment.oc1..aaaaaaaa2xbjqoj4aqujnbdp3ufn5etptkmzu53crpdgv42fku3tgumdy3ga
+
+EOF
+
+cat <<EOF >> /root/.oci/oci_api_key_oracsmemea.pem
+
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBxxxxxxxxxx
+-----END RSA PRIVATE KEY-----
+
+EOF
+
+/root/bin/oci setup repair-file-permissions --file /root/.oci/config
+/root/bin/oci setup repair-file-permissions --file /root/.oci/oci_api_key_oracsmemea.pem
+
+sudo yum -y install cloud-utils-growpart
+sudo growpart /dev/sda 3
+sudo reboot
