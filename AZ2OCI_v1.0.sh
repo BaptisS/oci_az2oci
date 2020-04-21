@@ -5,10 +5,10 @@
 export comp_ID=ocid1.compartment.oc1..aaaaa
 export vhd_URL="'https://md-ssd-xyzxyz.blob.core.windows.net/xyzxyzxyz/abcd?sv=2017-04-17jhdjlmk'"
 export img_NAME=UBNVM02
-export objst_NS=oracsmemeaspec
-export objst_BN=AZ2OCI
+export objst_NS=namespace_name
+export objst_BN=bucket_name
 export img_LM=PARAVIRTUALIZED
-export vm_AD=QLMB:EU-FRANKFURT-1-AD-1
+export vm_AD=XXXX:EU-FRANKFURT-1-AD-1
 export vm_SP=VM.Standard2.1
 export vm_SN=ocid1.subnet.oc1.eu-frankfurt-1.aaaaaaaaqviqixxxxxx
 
