@@ -7,8 +7,6 @@ The following document will guide you trough the steps needed to import an Azure
 
 
 
-> ***Important Note:*** 
-> If you are using a Load Balancer in front of your Web Application, Security rules must be applied to your Load Balancer subnet (if using Security Lists) or Load Balancer Network Interfaces (if using network Security Groups).
 
 
 ***Prerequisites:***
